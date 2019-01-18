@@ -1,0 +1,16 @@
+# - Config file for the FooBar package
+# It defines the following variables
+#  GENFIT_INCLUDE_DIRS - include directories for GenFit
+#  GENFIT_LIBRARIES    - libraries to link against
+
+# Compute paths
+get_filename_component(GENFIT_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(GENFIT_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET GenFit)
+  include("${GENFIT_CMAKE_DIR}/FooBarTargets.cmake")
+endif()
+
+# These are IMPORTED targets created by GenFitTargets.cmake
+set(GENFIT_LIBRARIES GenFit)

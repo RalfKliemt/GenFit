@@ -48,7 +48,7 @@ IF(DEFINED ENV{RAVEPATH})
 	INCLUDE(FindPkgConfig)
 	SET(ENV{PKG_CONFIG_PATH} $ENV{RAVEPATH})
 	find_package(Rave REQUIRED)
-	
+
 	SET(RAVE True)
 ELSEIF(DEFINED Rave_LDFLAGS)
 	IF(DEFINED Rave_INCLUDE_DIRS)
@@ -71,7 +71,7 @@ IF(DEFINED RAVE)
 	SET(GF_INC_DIRS
 		./GFRave/include/ ${Rave_INCLUDE_DIRS_STR}
 	)
-	
+
 	AUX_SOURCE_DIRECTORY( ./GFRave/src  library_sources )
 ENDIF()
 

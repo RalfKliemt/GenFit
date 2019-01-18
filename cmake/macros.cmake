@@ -17,7 +17,7 @@ MESSAGE(STATUS "Found global svn revision to be ${GLOBAL_SVN_REVISION}.")
 # create symbolic lib target for calling library targets
 MACRO( ADD_SHARED_LIBRARY _name )
     ADD_LIBRARY( ${_name} SHARED ${ARGN} )
-    
+
     # change lib_target properties
     SET_TARGET_PROPERTIES( ${_name} PROPERTIES
         # create *nix style library versions + symbolic links
@@ -32,7 +32,7 @@ ENDMACRO( ADD_SHARED_LIBRARY )
 MACRO( GENERATE_PACKAGE_CONFIGURATION_FILES )
 
     FOREACH( arg ${ARGN} )
-        IF( ${arg} MATCHES "Config.cmake" )
+        IF( ${arg} MATCHES "GenFitConfig.cmake" )
             IF( EXISTS "${PROJECT_SOURCE_DIR}/cmake/${arg}.in" )
                 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake/${arg}.in"
                                 "${PROJECT_BINARY_DIR}/${arg}" @ONLY
@@ -42,7 +42,7 @@ MACRO( GENERATE_PACKAGE_CONFIGURATION_FILES )
         ENDIF()
 
 
-        IF( ${arg} MATCHES "ConfigVersion.cmake" )
+        IF( ${arg} MATCHES "GenFitConfigVersion.cmake" )
             # version configuration file
             IF( EXISTS "${PROJECT_SOURCE_DIR}/cmake/${arg}.in" )
                 CONFIGURE_FILE( "${PROJECT_SOURCE_DIR}/cmake/${arg}.in"
