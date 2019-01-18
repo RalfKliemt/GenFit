@@ -341,4 +341,4 @@ ELSE()
 ENDIF()
 
 # generate and install following configuration files
-#GENERATE_PACKAGE_CONFIGURATION_FILES( genfitConfig.cmake genfitConfigVersion.cmake )
+GENERATE_PACKAGE_CONFIGURATION_FILES( GenFitConfig.cmake GenFitConfigVersion.cmake )
