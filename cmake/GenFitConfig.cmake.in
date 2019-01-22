@@ -9,7 +9,7 @@ set(GENFIT_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
 
 # Our library dependencies (contains definitions for IMPORTED targets)
 if(NOT TARGET GenFit)
-  include("${GENFIT_CMAKE_DIR}/FooBarTargets.cmake")
+  include("${GENFIT_CMAKE_DIR}/GenFitTargets.cmake")
 endif()
 
 # These are IMPORTED targets created by GenFitTargets.cmake
